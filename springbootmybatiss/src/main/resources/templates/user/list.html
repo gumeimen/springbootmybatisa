@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html mlns:th="http://www.thymeleaf.org"
+      xmlns:th="http://www.w3.org/1999/xhtml" xmlns:mlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>用户管理</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+</head>
+
+<body>
+<div class="wrapper" align="center">
+    <div >
+        <div>
+            <h1 align="center">用户信息列表</h1>
+        </div>
+        <div >
+            <table border="1" cellspacing="0" bgcolor="#93FF93" width="45%" height="200"
+                    align="center">
+                <tr>
+                    <th>编号</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>年纪</th>
+                    <th colspan="3">操作</th>
+                </tr>
+                <tr align="center" th:each="list : ${users}">
+                    <td th:text="${list.id}"></td>
+                    <td th:text="${list.name}"></td>
+                    <td th:text="${list.gender}"></td>
+                    <td th:text="${list.age}"></td>
+
+                    <td><a th:href ="@{info(id=${list.id})}">查看</a></td>
+                    <td><a th:href ="@{delete(id=${list.id})}">删除</a></td>
+                    <td><a th:href ="@{edit(id=${list.id})}">修改</a></td>
+                </tr>
+            </table>
+            <td><a th:href ="@{add}">添加</a></td>
+        </div>
+    </div>
+</div>
+</body>
+</html>

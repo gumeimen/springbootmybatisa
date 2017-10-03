@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html mlns:th="http://www.thymeleaf.org"
+      xmlns:th="http://www.w3.org/1999/xhtml" xmlns:mlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>用户管理</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+</head>
+
+<body>
+<div align="center">
+    <div>
+        <div>
+            <h1>用户信息</h1>
+        </div>
+        <div>
+            <table border="1" cellspacing="0" bgcolor="#93FF93" width="45%" height="200"
+                   align="center">
+                <tr>
+                    <th>用户编号</th>
+                    <th>用户姓名</th>
+                    <th>用户性别</th>
+                    <th>用户年纪</th>
+                </tr>
+                <tr align="center">
+                    <td th:text="${user.id}"></td>
+                    <td th:text="${user.name}"></td>
+                    <td th:text="${user.gender}"></td>
+                    <td th:text="${user.age}"></td>
+                </tr>
+            </table>
+            <div>
+                <button type="button"><a th:href="@{list}">返回</a></button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
